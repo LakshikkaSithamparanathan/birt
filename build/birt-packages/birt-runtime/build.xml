@@ -5,7 +5,7 @@
   <property name="ROOT_DIR" location="../../.."/>
   <property name="TARGET_DIR" location="./target"/>
   <property name="STAGE_DIR" location="./target/package"/>
-  <target name="package" depends="build-report-engine, build-webviewer, build-webviewer-war">
+  <target name="package" depends="build-report-engine, build-webviewer, build-webviewer-war, build-runtime-jar">
     <zip destfile="${TARGET_DIR}/birt-runtime-${BIRT_VERSION}.zip">
       <fileset dir="${STAGE_DIR}"/>
     </zip>
@@ -90,6 +90,17 @@
   <target name="build-webviewer-war">
     <jar destfile="${STAGE_DIR}/birt.war">
       <fileset dir="${STAGE_DIR}/WebViewerExample"/>
+    </jar>
+  </target>
+  <target name="build-runtime-jar">
+    <!-- Use original web.xml without jsp precompile classes-->
+    <copy file="${ROOT_DIR}/viewer/org.eclipse.birt.report.viewer/birt/WEB-INF/web-war.xml" tofile="${VIEWER_DIR}/WEB-INF/web.xml" overwrite="true"/>
+    <!-- Remove precompiled jsp classes-->
+    <jar destfile="./target/runtime.jar">
+      <fileset dir="${VIEWER_DIR}">
+        <exclude name="WEB-INF/lib/jsp.jar"/>
+        <exclude name="WEB-INF/web-war.xml"/>
+      </fileset>
     </jar>
   </target>
 </project>
