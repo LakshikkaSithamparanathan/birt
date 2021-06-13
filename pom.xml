@@ -331,8 +331,6 @@
 					<includePackedArtifacts>false</includePackedArtifacts>
 					<environments>
 						<environment>
-							<os>win32</os>
-							<ws>win32</ws>
 							<arch>x86_64</arch>
 						</environment>
 					</environments>
