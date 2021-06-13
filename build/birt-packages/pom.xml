@@ -19,20 +19,20 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>birt-charts</module>
+		<!-- <module>birt-charts</module>
 		<module>birt-epp</module>
 		<module>birt-report-rcp</module>
 		<module>birt-report-all-in-one</module>
 		<module>birt-report-framework</module>
-		<module>birt-report-framework-sdk</module>
+		<module>birt-report-framework-sdk</module> -->
 		<module>birt-runtime</module>
 		<module>birt-runtime-osgi</module>
-		<module>birt-sample-plugins</module>
+		<!-- <module>birt-sample-plugins</module>
 		<module>birt-tests-suite</module>
 		<module>birt-wtp-integration-sdk</module>
 		<module>birt-source</module>
 		<module>birt-nl</module>
-		<module>birt-publish</module>
+		<module>birt-publish</module> -->
 		<module>birt-runtime-test</module>
 		<!--<module>birt-integration-test</module>-->
 	</modules>
