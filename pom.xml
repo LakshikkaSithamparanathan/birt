@@ -225,7 +225,7 @@
 		<module>features</module>
 		<module>model</module>
 		<!-- build issue inside -->
-		<!-- <module>nl</module> -->
+		<module>nl</module>
 		<!-- report.viewer.tests build issue, and how to run tests.xxx plugins -->
 		<module>testsuites</module>
 		<module>UI</module>
