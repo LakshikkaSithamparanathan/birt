@@ -92,5 +92,4 @@
       <fileset dir="${STAGE_DIR}/WebViewerExample/WEB-INF/lib/org.eclipse.birt.runtime_${BIRT_VERSION}.jar"/>
     </jar>
   </target>
-  </target>
 </project>
