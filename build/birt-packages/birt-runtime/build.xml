@@ -5,7 +5,7 @@
   <property name="ROOT_DIR" location="../../.."/>
   <property name="TARGET_DIR" location="./target"/>
   <property name="STAGE_DIR" location="./target/package"/>
-  <target name="package" depends="build-report-engine, build-webviewer, build-webviewer-war, build-runtime-jar">
+  <target name="package" depends="build-report-engine, build-webviewer, build-webviewer-war">
     <zip destfile="${TARGET_DIR}/birt-runtime-${BIRT_VERSION}.zip">
       <fileset dir="${STAGE_DIR}"/>
     </zip>
@@ -80,6 +80,10 @@
         <zipfileset src="${STAGE_DIR}/ReportEngine/lib/tmp.birt.runtime.jar"
                     excludes="META-INF/ECLIPSE_.*"/>
     </zip>
+    <zip destfile="${TARGET_DIR}/org.eclipse.birt.runtime_${BIRT_VERSION}.jar">
+        <zipfileset src="${STAGE_DIR}/ReportEngine/lib/tmp.birt.runtime.jar"
+                    excludes="META-INF/ECLIPSE_.*"/>
+    </zip>
     <delete file="${STAGE_DIR}/ReportEngine/lib/tmp.birt.runtime.jar"/>
   </target>
   <target name="build-webviewer">
@@ -87,9 +91,10 @@
       <fileset dir="${STAGE_DIR}/ReportEngine/lib"/>
     </copy>
   </target>
-  <target name="build-runtime-jar">
-    <jar destfile="${TARGET_DIR}/runtime.jar">
-      <fileset dir="${STAGE_DIR}/WebViewerExample/WEB-INF/lib/org.eclipse.birt.runtime_${BIRT_VERSION}.jar"/>
+  <target name="build-webviewer-war">
+    <jar destfile="${STAGE_DIR}/birt.war">
+      <fileset dir="${STAGE_DIR}/WebViewerExample"/>
     </jar>
   </target>
 </project>
+
